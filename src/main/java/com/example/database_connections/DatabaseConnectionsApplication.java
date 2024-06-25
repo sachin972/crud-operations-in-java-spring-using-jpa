@@ -20,7 +20,8 @@ public class DatabaseConnectionsApplication {
 		return runner -> {
 			// readStudent(studentDAO);
 			// getAllStudent(studentDAO);
-			getByLastName(studentDAO);
+			// getByLastName(studentDAO);
+			updateStudent(studentDAO);
 		};
 	}
 
@@ -56,5 +57,15 @@ public class DatabaseConnectionsApplication {
 
 	private void getByLastName(StudentDAO studentDAO) {
 		System.out.println(studentDAO.findByLastName("devi"));
+	}
+
+	private void updateStudent(StudentDAO studentDAO) {
+		Student getStudent = studentDAO.finByID(15);
+
+		getStudent.setLastName("devi");
+
+		studentDAO.update(getStudent);
+
+		System.out.println(getStudent);
 	}
 }
