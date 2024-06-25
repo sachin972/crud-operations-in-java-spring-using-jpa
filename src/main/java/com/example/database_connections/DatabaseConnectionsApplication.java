@@ -21,7 +21,11 @@ public class DatabaseConnectionsApplication {
 			// readStudent(studentDAO);
 			// getAllStudent(studentDAO);
 			// getByLastName(studentDAO);
-			updateStudent(studentDAO);
+			// updateStudent(studentDAO);
+			deleteStudent(studentDAO);
+			// deleteAllStudents(studentDAO);
+			// createMultipleStudents(studentDAO);
+			// createStudent(studentDAO);
 		};
 	}
 
@@ -35,7 +39,7 @@ public class DatabaseConnectionsApplication {
 
 	private void createMultipleStudents(StudentDAO studentDAO) {
 		System.out.println("Creating students..............");
-		Student student1 = new Student("archana", "devi", "arachana+1@wecp.in");
+		Student student1 = new Student("kartik", "dixit", "kartik@majdoor.in");
 		Student student2 = new Student("pranjal", "gupta", "pranjal@ciranomy.in");
 		Student student3 = new Student("akshat", "sri", "akshat@optum.in");
 
@@ -56,16 +60,24 @@ public class DatabaseConnectionsApplication {
 	}
 
 	private void getByLastName(StudentDAO studentDAO) {
-		System.out.println(studentDAO.findByLastName("devi"));
+		System.out.println(studentDAO.findByLastName("tripathi"));
 	}
 
 	private void updateStudent(StudentDAO studentDAO) {
-		Student getStudent = studentDAO.finByID(15);
+		Student getStudent = studentDAO.finByID(2);
 
-		getStudent.setLastName("devi");
+		getStudent.setLastName("tripathi");
 
 		studentDAO.update(getStudent);
 
 		System.out.println(getStudent);
+	}
+
+	private void deleteStudent(StudentDAO studentDAO) {
+		studentDAO.deleteByID(15);
+	}
+
+	private void deleteAllStudents(StudentDAO studentDAO) {
+		System.out.println("Deleted " + studentDAO.deleteAll() + " rows\n");
 	}
 }
