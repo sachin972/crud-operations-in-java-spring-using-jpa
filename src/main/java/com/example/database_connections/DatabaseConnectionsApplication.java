@@ -22,9 +22,9 @@ public class DatabaseConnectionsApplication {
 			// getAllStudent(studentDAO);
 			// getByLastName(studentDAO);
 			// updateStudent(studentDAO);
-			deleteStudent(studentDAO);
+			// deleteStudent(studentDAO);
 			// deleteAllStudents(studentDAO);
-			// createMultipleStudents(studentDAO);
+			createMultipleStudents(studentDAO);
 			// createStudent(studentDAO);
 		};
 	}
